@@ -22,3 +22,8 @@ import Route from '@ioc:Adonis/Core/Route'
 
 Route.resource('todos', 'TodosController')
 
+Route.group(() => {
+    Route.post("register", "AuthController.register");
+    Route.post("login", "AuthController.login");
+}).prefix("api");
+
